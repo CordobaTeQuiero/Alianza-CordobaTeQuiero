@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alianza - Cordoba Te Quiero</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header class="header">
+    <div class="contenedor-navegacion">
+      <div class="logo" aria-label="Logo Partido XYZ">
+        <!-- Logo SVG inline -->
+        <span>ALIANZA CORDOBA TE QUIERO</span>
+      </div>
+
+      <button class="btn-hamburguesa" id="btnHamb" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navPrincipal">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="navPrincipal" role="navigation">
+        <ul class="nav-lista">
+          <li><a href="#inicio">Inicio</a></li>
+          <li class="submenu">
+            <a href="#nosotros" aria-haspopup="true" aria-expanded="false" aria-controls="submenuNosotros">Nosotros </a>
+            <!--<ul class="submenu-lista" id="submenuNosotros" role="menu">
+              <li role="none"><a href="#quienes" role="menuitem">¿Quiénes somos?</a></li>
+              <li role="none"><a href="#autoridades" role="menuitem">Autoridades</a></li>
+            </ul>-->
+          </li>
+          <li><a href="#propuestas">Propuestas</a></li>
+          <li><a href="#candidatos">Candidatos</a></li>
+          <li><a href="#noticias">Noticias</a></li>
+          <li><a href="#contacto" class="btn-contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!--  HERO / CARRUSEL -->
+  <section id="inicio" class="hero" tabindex="-1">
+    <div class="hero-inner contenedor">
+      <div class="hero-texto">
+        <h1>Por un futuro más justo</h1>
+        <!--<p>Trabajo, educación y servicios para todos. Construyamos juntos.</p>-->
+        <a href="#propuestas" class="btn-primario">Ver propuestas</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SECCIONES -->
+
+  <button class="acordeon">ArchivosPdf - CORDOBA TE QUIERO</button>
+  <div class="panel">
+    <iframe src="tu_archivo.pdf" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    const acordeon = document.querySelector(".acordeon");
+    const panel = document.querySelector(".panel");
+
+    // Por defecto cerrado:
+    panel.style.maxHeight = "0";
+
+    acordeon.addEventListener("click", () => {
+      const activo = acordeon.classList.contains("activo");
+      if (activo) {
+        acordeon.classList.remove("activo");
+        panel.style.maxHeight = "0";
+      } else {
+        acordeon.classList.add("activo");
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  </script>
+
+  <section class="visor-docx">
+    <button class="btn-docx">📄 Ver Documento DOCX</button>
+  </section>
+  
+  <section class="visor-excel">
+    <button class="btn-excel">📄 Ver Documento Excel</button>
+  </section>
+
+
+  <main class="main">
+    <section id="nosotros" class="seccion contenedor">
+      <h2>Nosotros</h2>
+      <div class="grid-2">
+        <div>
+          <h3 id="quienes">¿Quiénes somos?</h3>
+          <p>Somos una organización comprometida con políticas públicas que impulsen desarrollo y equidad.</p>
+        </div>
+        <div>
+          <h3 id="autoridades">Autoridades</h3>
+          <p>Equipo elegido para representar los intereses de la ciudadanía.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="propuestas" class="seccion contenedor">
+      <h2>Propuestas</h2>
+      <div class="cards">
+        <article class="card">
+          <h4>Educación</h4>
+          <p>Invertir en escuelas y formación docente.</p>
+        </article>
+        <article class="card">
+          <h4>Salud</h4>
+          <p>Fortalecer la atención primaria en todo el país.</p>
+        </article>
+        <article class="card">
+          <h4>Trabajo</h4>
+          <p>Políticas activas para el empleo juvenil.</p>
+        </article>
+      </div>
+    </section>
+
+    <!--<section id="candidatos" class="seccion contenedor">
+      <h2>Candidatos</h2>
+      <div class="grid-3">
+        <div class="perfil">
+          <img loading="lazy" src="https://via.placeholder.com/220x220?text=Foto" alt="Candidato 1" />
+          <h5>Nombre 1</h5>
+          <p>Breve presentación.</p>
+        </div>
+        <div class="perfil">
+          <img loading="lazy" src="https://via.placeholder.com/220x220?text=Foto" alt="Candidato 2" />
+          <h5>Nombre 2</h5>
+          <p>Breve presentación.</p>
+        </div>
+        <div class="perfil">
+          <img loading="lazy" src="https://via.placeholder.com/220x220?text=Foto" alt="Candidato 3" />
+          <h5>Nombre 3</h5>
+          <p>Breve presentación.</p>
+        </div>
+      </div>
+    </section>-->
+
+    <!--<section id="noticias" class="seccion contenedor">
+      <h2>Últimas Noticias</h2>
+      <div class="noticias-grid">
+        <article class="noticia">
+          <img loading="lazy" src="https://via.placeholder.com/400x230?text=Noticia+A" alt="Noticia A" />
+          <div class="noticia-body">
+            <h4>Noticia A</h4>
+            <p>Resumen de la noticia A.</p>
+            <a href="#" class="enlace-noticia">Leer más</a>
+          </div>
+        </article>
+
+        <article class="noticia">
+          <img loading="lazy" src="https://via.placeholder.com/400x230?text=Noticia+B" alt="Noticia B" />
+          <div class="noticia-body">
+            <h4>Noticia B</h4>
+            <p>Resumen de la noticia B.</p>
+            <a href="#" class="enlace-noticia">Leer más</a>
+          </div>
+        </article>
+
+        <article class="noticia">
+          <img loading="lazy" src="https://via.placeholder.com/400x230?text=Noticia+C" alt="Noticia C" />
+          <div class="noticia-body">
+            <h4>Noticia C</h4>
+            <p>Resumen de la noticia C.</p>
+            <a href="#" class="enlace-noticia">Leer más</a>
+          </div>
+        </article>
+      </div>
+    </section> -->
+
+    <section id="contacto" class="seccion contenedor">
+      <h2>Contacto</h2>
+        <div class="datos-contacto">
+          <p><strong>Dirección:</strong> Proximamente</p>
+          <p><strong>Teléfono:</strong> Proximamente</p>
+          <p><strong>Email:</strong> Proximamente</p>
+
+          <!--<div class="redes-sociales" aria-label="Redes sociales">
+            <a href="#" aria-label="Facebook" class="icono-facebook" target="_blank" rel="noopener noreferrer" >
+              <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="#FFD700" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 12.073C22 6.477 17.523 2 12 2S2 6.477 2 12.073c0 4.991 3.657 9.128 8.438 9.88v-6.987h-2.54v-2.893h2.54v-2.207c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.462h-1.26c-1.243 0-1.63.772-1.63 1.562v1.877h2.773l-.443 2.893h-2.33v6.987C18.343 21.2 22 17.064 22 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="icono-twitter" target="_blank" rel="noopener noreferrer" >
+              <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="#FFD700" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14.86A4.48 4.48 0 0 0 22.4.36a9.11 9.11 0 0 1-2.88 1.1 4.52 4.52 0 0 0-7.7 4.12A12.85 12.85 0 0 1 1.64 2.16a4.51 4.51 0 0 0 1.4 6.04A4.48 4.48 0 0 1 .88 7.8v.06a4.51 4.51 0 0 0 3.62 4.42 4.52 4.52 0 0 1-2.04.07 4.52 4.52 0 0 0 4.21 3.12 9.06 9.06 0 0 1-5.6 1.93A9.2 9.2 0 0 1 0 18.3a12.78 12.78 0 0 0 6.92 2.03c8.3 0 12.85-6.87 12.85-12.82 0-.2 0-.42-.02-.62A9.27 9.27 0 0 0 23 3z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="icono-instagram" target="_blank" rel="noopener noreferrer" >
+              <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="#FFD700" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm8.5 1.5h-8.5a4.25 4.25 0 0 0-4.25 4.25v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25zm-4.25 3a5.75 5.75 0 1 1 0 11.5 5.75 5.75 0 0 1 0-11.5zm0 1.5a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0-8.5zm5.5-.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0z"/>
+                <a href="https://www.facebook.com/" target="_blank"></a>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="contenedor contenedor-footer">
+      <div>© 2025 Alianza CORDOBA TE QUIERO. Todos los derechos reservados.</div>
+      <nav class="footer-links" aria-label="Enlaces del pie de página">
+        <a href="#inicio">Inicio</a>
+        <!--<a href="#noticias">Noticias</a>-->
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="scripts.js" defer></script>
+</body>
+</html>
