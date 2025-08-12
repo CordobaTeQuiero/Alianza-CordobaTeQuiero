@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Cordoba Te Quiero - Sitio Oficial</title>
-  <meta name="description" content="Sitio oficial de la Alianza-CordobaTeQuiero, la nueva agrupación política de toda Córdoba.">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alianza - Cordoba Te Quiero</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -52,20 +51,49 @@
   
   <!-- SECCIONES -->
 
-  <button class="acordeon">ArchivosPdf - CORDOBA TE QUIERO</button>
+  <!-- Sección 1 -->
+  <button class="acordeon">Presentan Alianza Transitoria - CORDOBA TE QUIERO</button>
   <div class="panel">
-    <iframe src="tu_archivo.pdf" allowfullscreen></iframe>
+    <iframe src="WhatsApp%20Image%202025-08-10%20at%2023.03.45.pdf" allowfullscreen></iframe>
   </div>
 
-  <script>
-    const acordeon = document.querySelector(".acordeon");
-    const panel = document.querySelector(".panel");
+  <!-- seccion 2-->
+  <button class="acordeon">Acta Constitutiva - CORDOBA TE QUIERO</button>
+  <div class="panel">
+    <iframe src="ACTA%20CONSTITUTIVA%20DE%20LA%20ALIANZA%20CORDOBA%20TE%20QUIERO.pdf" allowfullscreen></iframe>
+  </div>
 
-    // Por defecto cerrado:
+  <!-- Sección 3 -->
+  <button class="acordeon">Reglamento Electoral - CORDOBA TE QUIERO</button>
+  <div class="panel">
+    <iframe src="REGLAMENTO%20ELECTORAL%20ALIANZA%20CORDOBA%20TE%20QUIERO%20NUEVA%20(1).pdf" allowfullscreen></iframe>
+  </div>
+
+  <!-- Sección 5 -->
+  <button class="acordeon">Plataforma Electoral, Declaracion de Principios y Bases de Accion Politica</button>
+  <div class="panel">
+    <iframe src="ANEXO%201%20PLATAFFROMA,%20DECLARACION%20PRINCIPIOS%20Y%20BASES%20DE%20ACCION%20DE%20ALIANZA.pdf" allowfullscreen></iframe>
+  </div>
+
+  <!-- Sección 6 -->
+  <button class="acordeon">Junta Promotora - CORDOBA TE QUIERO</button>
+  <div class="panel">
+    <iframe src="9392-25%20Cordoba%20Te%20quiero%20Presenta%20Doc%20y%20J.Electoral.pdf" allowfullscreen></iframe>
+  </div>
+
+
+<script>
+  const acordeones = document.querySelectorAll(".acordeon");
+
+  acordeones.forEach((acordeon) => {
+    const panel = acordeon.nextElementSibling; // El div .panel que sigue al botón
+
+    // Por defecto cerrado
     panel.style.maxHeight = "0";
 
     acordeon.addEventListener("click", () => {
       const activo = acordeon.classList.contains("activo");
+
       if (activo) {
         acordeon.classList.remove("activo");
         panel.style.maxHeight = "0";
@@ -74,7 +102,9 @@
         panel.style.maxHeight = panel.scrollHeight + "px";
       }
     });
-  </script>
+  });
+</script>
+
 
   <section class="visor-docx">
     <button class="btn-docx">📄 Ver Documento DOCX</button>
